@@ -10,7 +10,7 @@ import AmexLogo from '../img/brands/amex.png';
 import DiscoverLogo from '../img/brands/discover.png';
 
 
-const Home = () => {
+const Home = ({ changeComponent }) => {
 
     return (
         <>
@@ -18,7 +18,7 @@ const Home = () => {
             <Container>
               <div className="text-center p-4 p-lg-5">
                 <h1 className="fw-bold mb-4">Seamlessly Convert Gift Cards<br />to Bank Deposits</h1>
-                <Button variant="primary" size="lg" className="me-2 py-2 px-4" href="deposit.html">
+                <Button variant="primary" size="lg" className="me-2 py-2 px-4" onClick={() => changeComponent('CardInformation')}>
                   <strong>Try Now</strong>
                 </Button>
               </div>

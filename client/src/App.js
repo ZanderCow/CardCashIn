@@ -2,10 +2,37 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MyNavbar from './components/navbar';
 import Home from './pages/home';
 import Footer from "../src/components/footer";
+import React, { useState } from 'react';
+import AboutMe from './pages/aboutMe';
+import CardInformation from './components/cardInfo';
+
 
 
 function App() {
+
+
+  const [currentComponent, setCurrentComponent] = useState('Home');
+
+  
+  
+  const changeComponent = (componentName) => {
+    setCurrentComponent(componentName);
+  };
+
+
+  const renderComponent = () => {
+    switch(currentComponent) {
+      case 'Home': return <Home changeComponent={changeComponent} />;
+      case 'CardInformation': return <CardInformation />;
+      //case 'Component2': return <Component2 />;
+      //case 'Component3': return <Component3 />;
+      //case 'Component4': return <Component4 />;
+      default: return <Home changeComponent={changeComponent} />;
+    }
+  };
+
   return (
+  
     <div className="App">
       <head>
         <meta charSet="utf-8" />
@@ -22,12 +49,11 @@ function App() {
         <link rel="stylesheet" href="/css/Navbar-Centered-Links-icons.css" />
       </head>
       <body>
-        <MyNavbar />
-        <Home />
+        <MyNavbar changeComponent={changeComponent}/>
+        {renderComponent()}
         <Footer />
       </body>
     </div>
-  
   );
 }
 
