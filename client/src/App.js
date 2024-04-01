@@ -5,7 +5,8 @@ import Footer from "../src/components/footer";
 import React, { useState } from 'react';
 import AboutMe from './pages/aboutMe';
 import CardInformation from './components/cardInfo';
-
+import BankInformation from './components/bankinfo';
+import SuccessComponent from './components/success';
 
 
 function App() {
@@ -23,10 +24,10 @@ function App() {
   const renderComponent = () => {
     switch(currentComponent) {
       case 'Home': return <Home changeComponent={changeComponent} />;
-      case 'CardInformation': return <CardInformation />;
-      //case 'Component2': return <Component2 />;
-      //case 'Component3': return <Component3 />;
-      //case 'Component4': return <Component4 />;
+      case 'AboutMe': return <AboutMe changeComponent={changeComponent} />;
+      case 'CardInformation': return <CardInformation changeComponent={changeComponent}/>;
+      case 'BankInformation' : return <BankInformation changeComponent={changeComponent}/>;
+      case 'Success': return <SuccessComponent changeComponent={changeComponent}/>;      
       default: return <Home changeComponent={changeComponent} />;
     }
   };

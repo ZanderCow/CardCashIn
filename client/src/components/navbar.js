@@ -20,7 +20,7 @@ const MyNavbar = ({ changeComponent }) => {
 
         <Navbar collapseOnSelect expand="md" className="py-3">
           <Container>
-            <Navbar.Brand onClick={() => changeComponent('CardInformation')}>
+            <Navbar.Brand onClick={() => changeComponent('Home')}>
               <div className="d-flex align-items-center">
                 <div className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="bi bi-credit-card-2-back-fill">
@@ -33,8 +33,8 @@ const MyNavbar = ({ changeComponent }) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="d-xxl-flex">
               <Nav className="me-auto my-2 my-lg-0 m-auto d-flex justify-content-center align-items-center" style={{ maxHeight: '100px' }} navbarScroll>
-                <Nav.Link className="active"><strong>Home</strong></Nav.Link>
-                <Nav.Link ><strong>About</strong></Nav.Link>
+                <Nav.Link className="active" onClick={() => changeComponent('Home')}><strong>Home</strong></Nav.Link>
+                <Nav.Link onClick={() => changeComponent('AboutMe')}><strong>About</strong></Nav.Link>
               </Nav>
               <Nav>
                 <Button variant="primary" className="d-flex justify-content-center"><strong>Try Now</strong></Button>
