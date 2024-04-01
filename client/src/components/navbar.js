@@ -37,7 +37,7 @@ const MyNavbar = ({ changeComponent }) => {
                 <Nav.Link onClick={() => changeComponent('AboutMe')}><strong>About</strong></Nav.Link>
               </Nav>
               <Nav>
-                <Button variant="primary" className="d-flex justify-content-center"><strong>Try Now</strong></Button>
+                <Button variant="primary" className="d-flex justify-content-center" onClick={() => changeComponent('CardInformation')}><strong>Try Now</strong></Button>
               </Nav>
             </Navbar.Collapse>
           </Container>

@@ -32,6 +32,7 @@ function App() {
     }
   };
 
+  // TODO: have the submit button on the bank info page shoot a post request to the server with the card and bank info
   return (
   
     <div className="App">
